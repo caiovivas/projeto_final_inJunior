@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'users/new'
+
   get 'sessions/new'
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -24,7 +26,13 @@ Rails.application.routes.draw do
   #   resources :products do
   #     member do
   #       get 'short'
-  #       post 'toggle'
+  #       post
+  #
+  #
+  #
+  #
+  #
+  # 'toggle'
   #     end
   #
   #     collection do
