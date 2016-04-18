@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by(cpf: params[:session][:cpf])
+    user = User.find_by(matricula: params[:session][:matricula])
     if user && user.authenticate(params[:session][:senha])
       #Login realizado com sucesso
       flash[:success] = "Entrou"
