@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Esqueci minha senha</title>
+	  <link href="css/estilo.css" rel="stylesheet">
+
+
+</head>
+
+<body >
+
+<%= render "shared/header.html" %>
+
+<div id="log">
+	<form method="POST" id="formulario_login">
+		<fieldset class="id_fieldset" >
+    		<legend ><h2> Recuperação de senha </h2></legend>
+			<p></p>
+			<input class="id_login" id="cpf" type="number" placeholder="  id" ></input>
+			<p>ou</p>
+			<input class="id_login"  id="email" type="text" placeholder="  e-mail" ></input>
+			<p></p>
+			<input class="botEnviar" type="submit" value="recuperar"></input><p></p>
+
+		</fieldset>
+	</form>
+	<p align="right"> <a class="esqueci" href="index.html">voltar</a></p>
+</div>
+	
+
+
+
+<script   src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
+<script src="js/login.js"></script>
+			
+</body>
+</html>

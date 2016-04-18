@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Universidade XXXX</title>
+	  <link href="css/estilo.css" rel="stylesheet">
+
+
+</head>
+
+<body >
+
+<%= render "shared/header.html" %>
+
+
+<div id="log">
+	<form method="POST" id="formulario_login">
+		<fieldset class="id_fieldset" >
+    		<legend ><h2> Login </h2></legend>
+			<p></p>
+			<input class="id_login" id="cpf" type="number" placeholder="  id" required></input>
+			<p></p>
+			<input class="id_password"  id="senha" type="password" placeholder="  senha" required></input>
+			<p></p>
+			<input class="botEnviar" type="submit" value="Login"></input><p></p>
+
+		</fieldset>
+	</form>
+		<p align="right"> <a class="esqueci" href="esquecisenha.html">Esqueci minha senha</a></p>
+</div>
+	
+			
+</body>
+</html>
