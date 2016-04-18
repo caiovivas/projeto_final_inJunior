@@ -7,4 +7,9 @@ class User < ActiveRecord::Base  #Controle de validade de novos usuários
             format: { with: VALID_EMAIL_REGEX }
   has_secure_password
   validates :password, presence: true, length: { in: 4..32 }
+
+  def User.digest(string)
+    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
+    BCrypt::Password.create(string, cost: cost)
+  end
 end

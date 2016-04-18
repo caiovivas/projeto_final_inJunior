@@ -4,15 +4,23 @@ class SessionsController < ApplicationController
   end
 
   def create
-    #user = User.find_by(id: params[:session][:id].downcase)
-    #if user && user.authenticate(params[:session][:senha])
+    user = User.find_by(cpf: params[:session][:cpf])
+    if user && user.authenticate(params[:session][:senha])
       #Login realizado com sucesso
-    #else
+      flash[:success] = "Entrou"
+      log_in user
+      redirect_to user
+    else
       #Criar mensagem de erro
-     # flash[:danger] = 'Combinação inválida de ID/Senha!'
+      flash.now[:danger] = 'Combinação inválida de ID/Senha!'
       render 'new'
+    end
+
   end
 
   def destroy
+    log_out
+    redirect_to root_url
   end
+
 end
