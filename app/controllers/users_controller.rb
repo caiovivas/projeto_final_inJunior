@@ -10,6 +10,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    @user.update_attributes(:pendente => true, :inativo => false)
     if @user.save
       #Usuario conseguiu criar a conta
       log_in @user
