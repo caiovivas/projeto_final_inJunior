@@ -9,12 +9,13 @@
       <legend><h2> Novo Material </h2></legend>
       <%= form_for(@material) do |f| %>
           <%= render 'shared/error_messages_mat' %>
-
-          <%= f.text_field :tipo, class: 'form-control id_login', placeholder: 'Tipo' %><br>
+          <div class="tipos_de_materiais">
+            <%= select_tag "tipoMat", options_from_collection_for_select(TipoMaterial.all, :id, :nome) %>
+          </div>
           <%= f.text_field :descricao, class: 'form-control id_login', placeholder: 'Descrição' %><br>
           <%= f.text_field :patrimonio, class: 'form-control id_login', placeholder: 'Patrimônio' %><br>
-
           <%= f.submit "Criar Material", class: "btn btn-primary botEnviar" %>
+          <%=  %>
       <% end %>
     </fieldset>
   </div>
