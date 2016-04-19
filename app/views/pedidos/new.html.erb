@@ -1,0 +1,34 @@
+<% provide(:title, "Pedido de Material") %>
+
+<%= render "layouts/header.html.erb" %>
+<%= stylesheet_link_tag 'estilo', media: 'all', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'pedidodemateriais', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'jquery-2.2.3', 'data-turbolinks-track' => true %>
+
+<div class="row" id="log">
+  <div class="col-md-6 col-md-offset-3" id="formulario_login">
+    <fieldset class="id_fieldset" >
+      <legend ><h2> Pedido de Material </h2></legend>
+      <form >
+        <ul id="pedidoDeMat">
+          <div class="relacaomat">
+            <li>
+              <SELECT NAME = "menu[]" SIZE=1>
+                <OPTION>Selecione o material</OPTION>
+                <OPTION>outra opção...</OPTION>
+                <OPTION>terceira opção</OPTION>
+              </SELECT>
+              <input class="remover" type="submit" value="x"></input>
+            </li>
+          </div>
+        </ul>
+        <p>Local do uso:<input type="text" size="18" placeholder="ex: sala 321" required></input></p>
+      </form>
+    </fieldset>
+
+  </div>
+  <form id="adc">
+    <input id="adicionar" type="submit" value="Adicionar mais materiais"></input>
+  </form>
+  <input type="submit" value="Concluir pedido"></input>
+</div>

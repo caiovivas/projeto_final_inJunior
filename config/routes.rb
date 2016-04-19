@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'pedidos/new'
+
   get 'materials/new'
 
   get 'users/new'
@@ -15,8 +17,10 @@ Rails.application.routes.draw do
   post  'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
   get 'newmat' => 'materials#new'
+  get 'newped' => 'pedidos#new'
   resources :users
   resources :materials
+  resources :pedidos
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

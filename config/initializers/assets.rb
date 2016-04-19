@@ -4,6 +4,8 @@
 Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.precompile += %w( estilo.scss )
 Rails.application.config.assets.precompile += %w( estiloLogin.scss )
+Rails.application.config.assets.precompile += %w( pedidodemateriais.js )
+Rails.application.config.assets.precompile += %w( jquery-2.2.3.js )
 Rails.application.config.assets.precompile += ['assets/*']
 # Add additional assets to the asset load path
 # Rails.application.config.assets.paths << Emoji.images_path
