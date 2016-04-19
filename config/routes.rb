@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'materials/new'
+
   get 'users/new'
 
   get 'sessions/new'
