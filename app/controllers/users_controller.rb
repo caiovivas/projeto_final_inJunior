@@ -4,9 +4,15 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if logged_in?
         if @user != @current_user
-          if @current_user.pendente || @current_user.inativo
+          if @current_user.pendente == true
             redirect_to (sessions_new_path)
+           if @current_user.inativo == false
+             redirect_to (sessions_new_path)
+
+
+end
           else
+            flash = "You must be logged in"
             @tipouser = TipoUsuario.find(@current_user.nivel_conta)
             redirect_to @current_user
           end
@@ -27,7 +33,7 @@ class UsersController < ApplicationController
       #Usuario conseguiu criar a conta
       log_in @user
       flash[:success] = "Bem vindo!"
-      redirect_to @user
+      redirect_to (sessions_new_path)
     else
       #Usuario falhou ao criar conta
       render 'new'
