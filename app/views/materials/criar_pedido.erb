@@ -1,27 +1,51 @@
-<% provide(:title, 'Novo Material') %>
+<!DOCTYPE HTML>
+<html>
 
-<%= render "layouts/header.html.erb" %>
-<%= stylesheet_link_tag 'estilo', media: 'all', 'data-turbolinks-track' => true %>
+<head>
+  <meta charset="utf-8">
+  <title>Pedido de Material</title>
+  <link href="css/estiloLogin.css" rel="stylesheet">
 
-<div class="row" id="log">
-  <div class="col-md-6 col-md-offset-3">
-    <fieldset class="id_fieldset">
-      <legend><h2> Novo Material </h2></legend>
 
-          <%= render 'shared/error_messages_mat' %>
-          <div class="tipos_de_materiais">
-                  <input type="radio" name="gender" checked value="male"> Existente:
-                  <%= select_tag("material[tipo]", options_from_collection_for_select(TipoMaterial.all, :id, :nome),{include_blank: 'Criar Novo'}) %>
-                  <br><input type="radio" name="gender" value="other"> Novo:
+</head>
 
-            <%= form_for(@material) do |f| %>
-                    <%= f.text_field :descricao, class: 'form-control id_login', placeholder: 'Descrição' %><br>
-                    <%= f.text_field :patrimonio, class: 'form-control id_login', placeholder: 'Patrimônio' %><br>
-                    <%= f.submit "Criar Material", class: "btn btn-primary botEnviar" %>
-                <% end %>
+<body >
+
+<%= render "shared/header.html" %>
+
+
+
+<div class="main-container usu" id="log">
+  <div>
+    <fieldset class="id_fieldset" >
+      <legend ><h2> Pedido de Material </h2></legend>
+      <form >
+        <ul id="pedidoDeMat">
+          <div class="relacaomat">
+            <li>
+              <SELECT NAME = "menu[]" SIZE=1>
+                <OPTION>Selecione o material</OPTION>
+                <OPTION>outra opção...</OPTION>
+                <OPTION>terceira opção</OPTION>
+              </SELECT>
+              <input class="remover" type="submit" value="x"></input>
+            </li>
           </div>
-
+        </ul>
+        <p>Local do uso:<input type="text" size="18" placeholder="ex: sala 321" required></input></p>
+      </form>
     </fieldset>
+
   </div>
+  <form id="adc">
+    <input id="adicionar" type="submit" value="Adicionar mais materiais"></input>
+  </form>
+  <input type="submit" value="Concluir pedido"></input>
 </div>
 
+
+<script src="js/jquery-2.2.3.js"></script>
+<script src="js/pedidodemateriais.js"></script>
+
+</body>
+</html>
