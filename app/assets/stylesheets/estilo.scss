@@ -1,0 +1,62 @@
+body{
+	margin: 0px;
+	text-align: center;
+
+}
+.logo{
+	background-image: image-url('/assets/logo.png');
+	width: 163px;
+	height: 117px;
+	background-repeat: no-repeat;
+	margin-top: -125px;
+    margin-left: 10px;
+}
+
+.imagemverde{
+	background-image: image-url('/assets/verdetopo.png');
+	width: auto;
+	height: 135px;
+
+}
+
+#log{
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 5%;
+	width: 320px;
+	font-size: 18px;
+	color: #014b3d;
+}
+
+.id_login{
+	border-radius: 5px; 
+	box-sizing: border-box;
+	border: 1px solid #ccc;
+	font-size: 22px;
+}
+.id_password{
+	border-radius: 5px; 
+	box-sizing: border-box;
+	border: 1px solid #ccc;
+	font-size: 22px;
+
+}
+
+.botEnviar{
+	font-size: 18px;
+	border-radius: 5px; 
+	box-sizing: border-box;
+	border: 1px solid gray;
+	color: #014b3d;
+}
+.id_fieldset{
+	line-height:200%;
+	border-radius: 34px; 
+	box-sizing: border-box;
+
+}
+.esqueci{
+	color: #014b3d;
+    text-decoration: none;
+
+}
