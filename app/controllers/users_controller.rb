@@ -4,8 +4,12 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if logged_in?
         if @user != @current_user
-          @tipouser = TipoUsuario.find(@current_user.nivel_conta)
-          redirect_to @current_user
+          if @current_user.pendente || @current_user.inativo
+            redirect_to (sessions_new_path)
+          else
+            @tipouser = TipoUsuario.find(@current_user.nivel_conta)
+            redirect_to @current_user
+          end
         end
     else
         redirect_to (sessions_new_path)
