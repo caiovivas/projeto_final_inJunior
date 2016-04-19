@@ -1,7 +1,9 @@
+<%= render "layouts/header.html.erb" %>
+<%= stylesheet_link_tag 'estilo', media: 'all', 'data-turbolinks-track' => true %>
+<%= stylesheet_link_tag 'estiloLogin', media: 'all', 'data-turbolinks-track' => true %>
+
 <% if logged_in? %>
-    <%= render "layouts/header.html.erb" %>
-    <%= stylesheet_link_tag 'estiloLogin', media: 'all', 'data-turbolinks-track' => true %>
-    <%= stylesheet_link_tag 'estilo', media: 'all', 'data-turbolinks-track' => true %>
+
 
     <div class="main-container usu" id="log">
       <fieldset class="id_fieldset" >
@@ -19,42 +21,58 @@
               <button >Histórico de pedidos</button><p></p>
                 </fieldset>
               </section>
-      <% else %>
-            <section class="block">
-              <fieldset class="small_fieldset" >
-                <legend><h2> Pedidos </h2></legend>
-                <button >Aprovar pedido</button><p></p>
-                <button >Cancelar pedido</button><p></p>
-                <button >Histórico de pedidos</button><p></p>
-              </fieldset>
             </section>
-            <% if @current_user.nivel_conta == 2%>
-                <section class="block">
-                  <fieldset class="small_fieldset" >
-                    <legend ><h2> Usuário </h2></legend>
-                    <button >Validar cadastro</button><p></p>
-                    <button >Modificar cadastro</button><p></p>
-                    <button >Usuário temporário</button><p></p>
-                  </fieldset>
+            <section>
+              <button >Modificar meus dados</button><p></p>
+            </section>
+            </fieldset>
+            </div>
+      <% else %>
+              <% if @current_user.nivel_conta == 2%>
+                    <section class="sec-container">
+                      <section class="block">
+                        <fieldset class="small_fieldset" >
+                          <legend ><h2> Usuário </h2></legend>
+                          <button >Validar cadastro</button><p></p>
+                          <button >Modificar cadastro</button><p></p>
+                          <button >Usuário temporário</button><p></p>
+                        </fieldset>
 
-                </section>
+                      </section>
+                      <section class="block">
+                        <fieldset class="small_fieldset" >
+                          <legend ><h2> Usuário </h2></legend>
+                          <button >Validar cadastro</button><p></p>
+                          <button >Modificar cadastro</button><p></p>
+                          <button >Usuário temporário</button><p></p>
+                        </fieldset>
+                      </section>
 
 
-                <section class="block">
-                  <fieldset class="small_fieldset pedido" >
-                    <legend ><h2> Material </h2></legend>
-                    <button >Cadastrar material</button><p></p>
-                  </fieldset>
-                </section>
+                      <section class="block">
+                        <fieldset class="small_fieldset pedido" >
+                          <legend ><h2> Material </h2></legend>
+                          <button >Cadastrar material</button><p></p>
+                        </fieldset>
+                      </section>
+
+
+                    </section>
+
+
+
+
+                    <section>
+                      <button >Modificar meus dados</button><p></p>
+                    </section>
+
+
+
+
             <% end %>
         <% end %>
 
-        </section>
-        <section>
-          <button >Modificar meus dados</button><p></p>
-        </section>
-      </fieldset>
-    </div>
+
 
 
 <% else %>
