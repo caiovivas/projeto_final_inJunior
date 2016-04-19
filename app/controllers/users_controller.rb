@@ -2,6 +2,13 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    if logged_in?
+        if @user != @current_user
+          redirect_to @current_user
+        end
+    else
+        redirect_to (sessions_new_path)
+    end
   end
 
   def new

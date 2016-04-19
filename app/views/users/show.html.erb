@@ -1,6 +1,8 @@
-<%= if @user.nivel_conta == 1 %>
-<%= @user.nome %>, <%= @user.email %>,<br>Matricula: <%= @user.matricula %>
 <% if logged_in? %>
-  <%= link_to "Sair", logout_path, method: "delete" %>
-<% end %>
+    <% if @current_user.nivel_conta == 1 %>
+      <%= @user.nome %>, <%= @user.email %>,<br>Matricula: <%= @user.matricula %>
+    <% end %>
+    <%= link_to "Sair", logout_path, method: "delete" %>
+<% else %>
+    <% redirect_to sessions_new_path %>
 <% end %>
