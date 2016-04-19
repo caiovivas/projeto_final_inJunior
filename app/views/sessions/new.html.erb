@@ -1,22 +1,22 @@
 <% provide(:title, "Log in") %>
-<h1>Log in</h1>
 
 <%= render "layouts/header.html.erb" %>
+<%= stylesheet_link_tag 'estilo', media: 'all', 'data-turbolinks-track' => true %>
 
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
+<div class="row" id="log">
+  <div class="col-md-6 col-md-offset-3" id="formulario_login">
+    <fieldset class="id_fieldset">
+      <legend><h2> Login </h2></legend>
     <%= form_for(:session, url: login_path) do |f| %>
 
-        <%= f.label :matricula %>
-        <%= f.text_field :matricula, class: 'form-control' %>
+        <%= f.text_field :matricula, class: 'form-control id_login', placeholder: 'Matricula' %><br>
 
-        <%= f.label :senha %>
-        <%= f.password_field :senha, class: 'form-control' %>
+        <%= f.password_field :senha, class: 'form-control id_password', placeholder: 'Senha' %><br>
 
 
-        <%= f.submit "Log in", class: "btn btn-primary" %>
+        <%= f.submit "Log in", class: "btn btn-primary botEnviar" %>
     <% end %>
-
-    <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+    <p>Novo usuário? <%= link_to "Cadastre-se agora!", signup_path %></p>
+    </fieldset>
   </div>
 </div>

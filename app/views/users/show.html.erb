@@ -1,2 +1,4 @@
 <%= @user.nome %>, <%= @user.email %>,<br>Matricula: <%= @user.matricula %>
-<%= link_to "Sair", logout_path %>
+<% if logged_in? %>
+  <%= link_to "Sair", logout_path, method: "delete" %>
+<% end %>
