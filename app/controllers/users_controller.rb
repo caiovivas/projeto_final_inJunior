@@ -4,6 +4,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if logged_in?
         if @user != @current_user
+          @tipouser = TipoUsuario.find(@current_user.nivel_conta)
           redirect_to @current_user
         end
     else

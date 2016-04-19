@@ -8,7 +8,7 @@
 
     <div class="main-container usu" id="log">
       <fieldset class="id_fieldset" >
-        <legend ><h2> <%= @current_user.nivel_conta %> </h2></legend>
+        <legend ><h2> <%= TipoUsuario.find(@current_user).nome %> </h2></legend>
         <p>Bem vindo <%= @current_user.nome %> !</p>
 
 
