@@ -1,4 +1,9 @@
 <% if logged_in? %>
+    //layout
+    <%= render "layouts/header.html.erb" %>
+    <%= stylesheet_link_tag 'estiloLogin', media: 'all', 'data-turbolinks-track' => true %>
+
+
     <% if @current_user.nivel_conta == 1 %>
       <%= @user.nome %>, <%= @user.email %>,<br>Matricula: <%= @user.matricula %>
     <% end %>
