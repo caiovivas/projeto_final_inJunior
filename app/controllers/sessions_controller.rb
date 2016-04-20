@@ -9,7 +9,13 @@ class SessionsController < ApplicationController
       #Login realizado com sucesso
       flash[:success] = "Entrou"
       log_in user
-      redirect_to user
+      if user.pendente || user.inativo
+        redirect_to root_url
+        flash.now[:danger] = 'Conta em avaliação pendente/inativa'
+      else
+        redirect_to user
+      end
+
     else
       #Criar mensagem de erro
       flash.now[:danger] = 'Combinação inválida de ID/Senha!'
