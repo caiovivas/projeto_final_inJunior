@@ -1,0 +1,29 @@
+
+<%= render "layouts/header.html" %>
+
+
+<table id="example" class="display" cellspacing="0" width="auto">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Fazer o pedido</th>
+
+  </tr>
+  </thead>
+  <tfoot>
+  <tr>
+    <th>Name</th>
+    <th>Fazer o Pedido</th>
+
+  </tr>
+  </tfoot>
+  <tbody>
+  <% TipoMaterial.all.each do |a| %>
+  <tr>
+
+    <td><%=  a.nome  %></td>
+    <td><button class="botaopedir" >Pedir</button></td>
+    <%end%>
+  </tr>
+  </tbody>
+</table>
