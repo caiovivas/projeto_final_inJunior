@@ -10,18 +10,10 @@
     <fieldset class="id_fieldset" >
       <legend ><h2> Pedido de Material </h2></legend>
       <form >
-        <ul id="pedidoDeMat">
-          <div class="relacaomat">
-            <li>
-              <SELECT NAME = "menu[]" SIZE=1>
-                <OPTION>Selecione o material</OPTION>
-                <OPTION>outra opção...</OPTION>
-                <OPTION>terceira opção</OPTION>
-              </SELECT>
-              <input class="remover" type="submit" value="x"></input>
-            </li>
-          </div>
-        </ul>
+        <% TipoMaterial.all.each do |p| %>
+            <td><%= p.nome %></td>
+
+        <% end %>
         <p>Local do uso:<input type="text" size="18" placeholder="ex: sala 321" required></input></p>
       </form>
     </fieldset>
