@@ -1,15 +1,8 @@
 Rails.application.routes.draw do
+
   get 'pedidos/new'
-
-  get 'materials/new'
-
-  get 'users/new'
-
-  get 'sessions/new'
-
-  get 'materials/criarpedido'
-
-  get 'materials/homologarpedido'
+  get 'administracao/homologarpedido'
+  get 'administracao/aceitarusuario'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

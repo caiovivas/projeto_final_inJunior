@@ -39,9 +39,7 @@
     <td> <input id="ck_usuario" type="radio" name="<%=a.id%>" checked value="1"></td>
     <td> <input id="ck_secreataria" type="radio" name="<%=a.id%>" value="2"></td>
     <td> <input id="ck_gerencia" type="radio" name="<%=a.id%>" value="3"></td>
-        <%= form_for @user do |t| %>
-          <td> t.submit "ck_usuario", :name => 'Aceitar'
-        <% end %>
+
     <td> <input type="button" name="<%=a.id%>" value="rejeitar"></td>
     <%end%>
     <%end%>

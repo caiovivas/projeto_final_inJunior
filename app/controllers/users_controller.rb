@@ -22,10 +22,6 @@ end
     end
   end
 
-  def mudar_permissao
-    @user.nivel_conta =
-  end
-
   def new
     @user = User.new
   end
