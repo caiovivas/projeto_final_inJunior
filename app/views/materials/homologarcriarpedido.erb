@@ -1,0 +1,37 @@
+
+<%= render "layouts/header.html" %>
+
+
+<div class="containerpedidos" id="log">
+  <fieldset class="id_fieldset" >
+    <legend ><h2> Criação de Pedidos </h2></legend>
+
+<table id="example"  align="center" class="display" cellspacing="1" width="auto">
+  <thead>
+  <tr>
+    <th> Material </th>
+    <th> Selecione </th>
+
+  </tr>
+  </thead>
+  <tfoot>
+  <tr>
+    <th > Material </th>
+    <th> Selecione </th>
+
+  </tr>
+  </tfoot>
+  <tbody>
+  <% TipoMaterial.all.each do |a| %>
+  <tr>
+
+    <td class="criarpedido"><%=  a.nome  %></td>
+    <td> <input type="checkbox" name="gender" value="1"></td>
+
+    <%end%>
+  </tr>
+  </tbody>
+</table>
+    <td> <input type="button" name="gender" value="Fazer Pedido" actived></td>
+</fieldset>
+  </div>
