@@ -36,10 +36,13 @@
     <td class="thnome" ><%=  a.nome  %></td>
     <td><%=  a.cpf  %></td>
 
-    <td> <input id="ck_usuario" type="radio" name="<%=a.id%>" checked value="1"></td>
-    <td> <input id="ck_secreataria" type="radio" name="<%=a.id%>" value="2"></td>
-    <td> <input id="ck_gerencia" type="radio" name="<%=a.id%>" value="3"></td>
-
+       <td><%= radio_button_tag(:conta, 1) %></td>
+        <td><%= label_tag(:conta_usuario, "Usuário") %></td>
+        <td><%= radio_button_tag(:conta, 2) %></td>
+        <td><%= label_tag(:conta_usuario, "Secretaria") %></td>
+        <td><%= radio_button_tag(:conta, 3) %></td>
+        <td><%= label_tag(:conta_usuario, "Gerência") %></td>
+        <td><td><%= link_to("Aceitar", user_path(a, "user[nivel_conta]" => params[:conta]), :method => :put) %></td>
     <td> <input type="button" name="<%=a.id%>" value="rejeitar"></td>
     <%end%>
     <%end%>

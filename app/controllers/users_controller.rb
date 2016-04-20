@@ -26,6 +26,13 @@ end
     @user = User.new
   end
 
+  def update
+    @user = User.find params[:id]
+    if @user.update_attributes(user_params)
+
+    end
+  end
+
   def create
     @user = User.new(user_params)
     @user.update_attributes(:pendente => true, :inativo => false)
