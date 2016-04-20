@@ -10,23 +10,22 @@
   <tr>
     <th class="thnome">Name</th>
     <th> Cpf </th>
-    <th> Usuário </th>
-    <th> Secretaria </th>
-    <th> Gerente </th>
-    <th></th>
-    <th></th>
-
+    <th>        </th>
+    <th>        </th>
+    <th>        </th>
+    <th>        </th>
+    <th>        </th>
   </tr>
   </thead>
   <tfoot>
   <tr>
     <th class="thnome">Name</th>
     <th> Cpf </th>
-    <th> Usuário </th>
-    <th> Secretaria </th>
-    <th> Gerente </th>
-    <th></th>
-    <th></th>
+    <th>        </th>
+    <th>        </th>
+    <th>        </th>
+    <th>        </th>
+    <th>        </th>
   </tr>
   </tfoot>
   <tbody>
@@ -35,10 +34,10 @@
     <% if a.inativo == false && a.pendente == true %>
     <td class="thnome" ><%=  a.nome  %></td>
     <td><%=  a.cpf  %></td>
-        <td><%= link_to("Usuario", user_path(a, "user[nivel_conta]" => 1), :method => :put) %></td>
-        <td><%= link_to("Secretaria", user_path(a, "user[nivel_conta]" => 2), :method => :put) %></td>
-        <td><%= link_to("Gerente", user_path(a, "user[nivel_conta]" => 3), :method => :put) %></td>
-        <td><%= link_to("Rejeitar", user_path(a, "user[nivel_conta]" => 0), :method => :put) %></td>
+        <td > <button class="botaousua"> <%= link_to("Usuario", user_path(a, "user[nivel_conta]" => 1), :method => :put) %></td></button>
+        <td ><button class="botaousua"><%= link_to("Secretaria", user_path(a, "user[nivel_conta]" => 2), :method => :put) %></td></button>
+        <td ><button class="botaousua"><%= link_to("Gerente", user_path(a, "user[nivel_conta]" => 3), :method => :put) %></td></button>
+        <td ><button class="botaousua"><%= link_to("Rejeitar", user_path(a, "user[nivel_conta]" => 0), :method => :put) %></td></button>
     <%end%>
     <%end%>
   </tr>

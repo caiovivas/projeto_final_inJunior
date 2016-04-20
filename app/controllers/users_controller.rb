@@ -28,8 +28,6 @@ end
 
   def update
     @user = User.find params[:id]
-    puts ("TESTETESTETESTETESTETESTETESTETESTETESTETESTE")
-    puts (params[:user][:nivel_conta])
     if params[:user][:nivel_conta] == 0
       User.find params[:id].destroy
     else

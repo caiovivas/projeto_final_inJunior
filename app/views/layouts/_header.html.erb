@@ -1,4 +1,8 @@
 <header id="cabecalho">
 	<div class="imagemverde"></div>
 	<div class="logo"></div>
+  <% if logged_in? %>
+    <%= current_user.nome %>,<%= link_to "Sair", {:controller => "sessions", :action => "destroy"}, :method => :delete %>
+  <%end%>
+  
 </header>			

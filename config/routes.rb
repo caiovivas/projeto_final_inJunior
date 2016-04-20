@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   delete 'logout' => 'sessions#destroy'
   get 'newmat' => 'materials#new'
   get 'newped' => 'pedidos#new'
+  post 'createped' => 'pedidos#create'
   get 'administracao/homologarpedido'
   get 'administracao/aceitarusuario'
   resources :users
