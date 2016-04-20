@@ -1,0 +1,45 @@
+
+<%= render "layouts/header.html" %>
+
+<div class="containeraceitarusuario" id="log">
+  <fieldset class="id_fieldset ajustar"  >
+    <legend ><h2> Criação de Pedidos </h2></legend>
+
+<table id="example"  align="center" class="display" cellspacing="0" width="auto">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Cpf</th>
+    <th></th>
+    <th>Aceitar tipo:</th>
+    <th></th>
+    <th>Não aceitar</th>
+
+  </tr>
+  </thead>
+  <tfoot>
+  <tr>
+    <th>Name</th>
+    <th>Cpf</th>
+    <th></th>
+    <th>Aceitar tipo:</th>
+    <th></th>
+    <th>Não aceitar</th>
+  </tr>
+  </tfoot>
+  <tbody>
+  <% User.all.each do |a| %>
+  <tr>
+
+    <td ><%=  a.nome  %></td>
+    <td><%=  a.cpf  %></td>
+    <td><button class="botaopedir" >usuário</button></td>
+    <td><button class="botaopedir" >secretaria</button></td>
+    <td><button class="botaopedir" >gerente</button></td>
+    <td><button class="botaopedir" >rejeitar</button></td>
+    <%end%>
+  </tr>
+  </tbody>
+</table>
+</fieldset>
+  </div>
