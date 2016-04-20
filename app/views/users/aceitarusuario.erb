@@ -1,42 +1,48 @@
 
 <%= render "layouts/header.html" %>
 
-<div class="containeraceitarusuario" id="log">
+<div class="tabelacriarpedidos">
   <fieldset class="id_fieldset ajustar"  >
     <legend ><h2> Criação de Pedidos </h2></legend>
 
-<table id="example"  align="center" class="display" cellspacing="0" width="auto">
+<table id="example"  align="center" class="display" cellspacing="3" width="auto">
   <thead>
   <tr>
-    <th>Name</th>
-    <th>Cpf</th>
+    <th class="thnome">Name</th>
+    <th> Cpf </th>
+    <th> Usuário </th>
+    <th> Secretaria </th>
+    <th> Gerente </th>
     <th></th>
-    <th>Aceitar tipo:</th>
     <th></th>
-    <th>Não aceitar</th>
 
   </tr>
   </thead>
   <tfoot>
   <tr>
-    <th>Name</th>
-    <th>Cpf</th>
+    <th class="thnome">Name</th>
+    <th> Cpf </th>
+    <th> Usuário </th>
+    <th> Secretaria </th>
+    <th> Gerente </th>
     <th></th>
-    <th>Aceitar tipo:</th>
     <th></th>
-    <th>Não aceitar</th>
   </tr>
   </tfoot>
   <tbody>
   <% User.all.each do |a| %>
   <tr>
-
-    <td ><%=  a.nome  %></td>
+    <% if a.inativo == false && a.pendente == true %>
+    <td class="thnome" ><%=  a.nome  %></td>
     <td><%=  a.cpf  %></td>
-    <td><button class="botaopedir" >usuário</button></td>
-    <td><button class="botaopedir" >secretaria</button></td>
-    <td><button class="botaopedir" >gerente</button></td>
-    <td><button class="botaopedir" >rejeitar</button></td>
+
+    <td> <input type="radio" name="<%=a.id%>" checked value="1"></td>
+    <td> <input type="radio" name="<%=a.id%>" value="2"></td>
+    <td> <input type="radio" name="<%=a.id%>" value="3"></td>
+
+    <td> <input type="button" name="<%=a.id%>" value="aceitar" actived></td>
+    <td> <input type="button" name="<%=a.id%>" value="rejeitar"></td>
+    <%end%>
     <%end%>
   </tr>
   </tbody>
