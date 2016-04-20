@@ -28,9 +28,16 @@ end
 
   def update
     @user = User.find params[:id]
-    puts("teste:")
-    puts (params)
-    @user.update_attribute(:nivel_conta, params[:user][:nivel_conta])
+    puts ("TESTETESTETESTETESTETESTETESTETESTETESTETESTE")
+    puts (params[:user][:nivel_conta])
+    if params[:user][:nivel_conta] == 0
+      User.find params[:id].destroy
+    else
+      @user.update_attribute(:nivel_conta, params[:user][:nivel_conta])
+      @user.update_attribute(:pendente, false)
+    end
+
+    redirect_to (administracao_aceitarusuario_path)
   end
 
   def create

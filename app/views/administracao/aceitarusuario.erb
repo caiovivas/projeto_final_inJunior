@@ -35,12 +35,10 @@
     <% if a.inativo == false && a.pendente == true %>
     <td class="thnome" ><%=  a.nome  %></td>
     <td><%=  a.cpf  %></td>
-        <td><%= radio_button_tag(:nivel, "2") %></td>
-        <td><%= label_tag(:nivel_secretaria, "2") %></td>
-        <td><%= radio_button_tag(:nivel, "3") %></td>
-        <td><%= label_tag(:nivel_gerente, "3") %></td>
-        <td><%= link_to("Aceitar", user_path(a, "user[nivel_conta]" => params[:nivel]), :method => :put) %></td>
-    <td> <input type="button" name="<%=a.id%>" value="rejeitar"></td>
+        <td><%= link_to("Usuario", user_path(a, "user[nivel_conta]" => 1), :method => :put) %></td>
+        <td><%= link_to("Secretaria", user_path(a, "user[nivel_conta]" => 2), :method => :put) %></td>
+        <td><%= link_to("Gerente", user_path(a, "user[nivel_conta]" => 3), :method => :put) %></td>
+        <td><%= link_to("Rejeitar", user_path(a, "user[nivel_conta]" => 0), :method => :put) %></td>
     <%end%>
     <%end%>
   </tr>
