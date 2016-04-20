@@ -30,7 +30,7 @@
       <tbody>
       <% TipoMaterial.all.each do |a| %>
           <tr>
-            <% hidden_field_tag 'id_material', a.id %>
+            <% f.hidden_field :id_material, a.id %>
           <td class="thnome"><%= a.nome %></td>
           <td><%= f.submit "Pedir", class: "btn btn-primary botEnviar" %></td>
       <%end%>
