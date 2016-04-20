@@ -28,9 +28,9 @@ end
 
   def update
     @user = User.find params[:id]
-    if @user.update_attributes(user_params)
-
-    end
+    puts("teste:")
+    puts (params)
+    @user.update_attribute(:nivel_conta, params[:user][:nivel_conta])
   end
 
   def create

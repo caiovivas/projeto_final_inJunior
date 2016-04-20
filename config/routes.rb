@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'pedidos/new'
-  get 'administracao/homologarpedido'
-  get 'administracao/aceitarusuario'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -15,6 +13,8 @@ Rails.application.routes.draw do
   delete 'logout' => 'sessions#destroy'
   get 'newmat' => 'materials#new'
   get 'newped' => 'pedidos#new'
+  get 'administracao/homologarpedido'
+  get 'administracao/aceitarusuario'
   resources :users
   resources :materials
   resources :pedidos
